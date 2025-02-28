@@ -1,0 +1,191 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import ProfileSection from '../components/ProfileSection.astro';
+import SkillCard from '../components/SkillCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SpeakingCard from '../components/SpeakingCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+// Skills data
+const skills = [
+  {
+    icon: "📊",
+    title: "Data Analysis",
+    description: "Expert in statistical analysis, data mining, and extracting actionable insights from large datasets."
+  },
+  {
+    icon: "🧠",
+    title: "Machine Learning",
+    description: "Building advanced ML models for classification, regression, clustering and recommendation systems."
+  },
+  {
+    icon: "🔮",
+    title: "Deep Learning",
+    description: "Expertise in neural networks, CNNs, RNNs, and transformer models using TensorFlow and PyTorch."
+  },
+  {
+    icon: "🐍",
+    title: "Python Ecosystem",
+    description: "Proficient with NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn and data processing libraries."
+  },
+  {
+    icon: "📓",
+    title: "NLP",
+    description: "Experience with text analytics, sentiment analysis, and building sophisticated language models."
+  },
+  {
+    icon: "🗄️",
+    title: "Big Data",
+    description: "Working with distributed computing frameworks like Spark and cloud-based data solutions."
+  }
+];
+
+// Projects data
+const projects = [
+  {
+    title: "Advanced Customer Segmentation",
+    tags: ["Clustering", "Python", "Data Visualization"],
+    description: "Developed an unsupervised learning model to identify distinct customer segments, enabling personalized marketing strategies that increased conversion rates by 28%."
+  },
+  {
+    title: "Predictive Maintenance System",
+    tags: ["Time Series", "IoT", "TensorFlow"],
+    description: "Built an end-to-end solution that processes sensor data in real-time to predict equipment failures before they occur, reducing downtime by 35% for manufacturing clients."
+  },
+  {
+    title: "NLP-Powered Feedback Analysis",
+    tags: ["NLP", "BERT", "Dashboard"],
+    description: "Created a sentiment analysis pipeline using transformer models to analyze customer feedback across multiple channels, achieving 92% accuracy in sentiment classification."
+  }
+];
+
+// Speaking engagements data
+const speakingEvents = [
+  {
+    title: "Data Science Workshop",
+    description: "Led a 3-day intensive workshop on practical machine learning techniques for industry applications.",
+    imagePath: "/placeholder/300/200"
+  },
+  {
+    title: "AI Conference Jakarta",
+    description: "Keynote speaker on \"The Future of ML in Southeast Asian Markets\" at Jakarta's annual tech conference.",
+    imagePath: "/placeholder/300/200"
+  },
+  {
+    title: "University Guest Lecturer",
+    description: "Regular guest lecturer on applied AI and data science at top Indonesian universities.",
+    imagePath: "/placeholder/300/200"
+  },
+  {
+    title: "Industry Panel",
+    description: "Participated in expert panel discussions on ethical AI implementation in developing markets.",
+    imagePath: "/placeholder/300/200"
+  }
+];
+---
+
+<MainLayout title="Rahmad | Data Scientist & ML Engineer">
+  <Header />
+  <ProfileSection />
+  
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="skills-container">
+        {skills.map(skill => (
+          <SkillCard 
+            icon={skill.icon} 
+            title={skill.title} 
+            description={skill.description} 
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        {projects.map(project => (
+          <ProjectCard 
+            title={project.title} 
+            tags={project.tags} 
+            description={project.description} 
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section id="speaking" class="section">
+    <div class="container">
+      <h2 class="section-title">Speaking & Workshops</h2>
+      <div class="speaking-grid">
+        {speakingEvents.map(event => (
+          <SpeakingCard 
+            title={event.title} 
+            description={event.description} 
+            imagePath={event.imagePath} 
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <ContactForm />
+    </div>
+  </section>
+  
+  <Footer />
+</MainLayout>
+
+<style>
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* Center align like your reference */
+    padding: 2rem 1rem;
+  }
+
+  .text-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .text-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .projects-grid, .speaking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .speaking-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid, .speaking-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

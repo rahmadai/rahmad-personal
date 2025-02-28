@@ -1,0 +1,90 @@
+<section class="profile-section" id="about">
+  <div class="container">
+    <div class="profile-image">
+      <img src="/placeholder/profile-250.jpeg" alt="Rahmad's profile">
+    </div>
+    <h1 class="profile-title">Data Scientist & ML Engineer</h1>
+    <p class="profile-location">based in Jakarta, Indonesia</p>
+    <p class="profile-bio">
+      I'm Rahmad, a data scientist and machine learning engineer specializing in predictive analytics and deep learning solutions. With experience mentoring over 100 individuals and a strong presence in the tech community, I'm committed to sharing knowledge and fostering growth within the data science field. Feel free to reach out for collaboration opportunities or mentorship inquiries. Let's create something remarkable together!
+    </p>
+    <div class="social-links">
+      <a href="#" aria-label="Twitter">𝕏</a>
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="GitHub">🐙</a>
+      <a href="#" aria-label="LinkedIn">🔗</a>
+      <a href="#" aria-label="Medium">✒️</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .profile-section {
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 3px solid var(--accent-color);
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    max-width: 700px;
+  }
+  
+  .profile-location {
+    font-size: 1.5rem;
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+  }
+  
+  .profile-bio {
+    max-width: 700px;
+    margin: 0 0 2rem 0; /* Remove auto centering */
+    line-height: 1.8;
+    color: var(--secondary-text);
+    text-align: left; /* Align text to the left */
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: var(--accent-color);
+  }
+  
+  @media (max-width: 768px) {
+    .profile-title {
+      font-size: 2rem;
+    }
+    
+    .profile-location {
+      font-size: 1.2rem;
+    }
+  }
+</style>

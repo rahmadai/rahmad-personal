@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imagePath: string;
+}
+
+const { title, description, imagePath } = Astro.props;
+---
+
+<div class="speaking-card">
+  <div class="speaking-image">
+    <img src={imagePath} alt={title}>
+  </div>
+  <div class="speaking-content">
+    <h3 class="project-title">{title}</h3>
+    <p>{description}</p>
+  </div>
+</div>
+
+<style>
+  .speaking-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  
+  .speaking-image {
+    height: 150px;
+    background-color: var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .speaking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .speaking-content {
+    padding: 1.5rem;
+  }
+</style>
